@@ -1,0 +1,3 @@
+[submodule "FeedGenerator/Websites/PythonWebScrapingManager"]
+	path = FeedGenerator/Websites/PythonWebScrapingManager
+	url = https://github.com/Filomilo/PythonWebScrapingManager.git
