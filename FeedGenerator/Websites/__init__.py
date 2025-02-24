@@ -1,0 +1,1 @@
+from .WebToonFeeder import generateFeedForWebToon
