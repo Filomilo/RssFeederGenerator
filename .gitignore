@@ -1,1 +1,4 @@
 /.venv
+/.idea
+/FeedGenerator/Websites/__pycache__
+/FeedGenerator/__pycache__

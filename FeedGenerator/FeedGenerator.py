@@ -15,6 +15,7 @@ def generateFeedResponseForUrl(url:str)-> Response:
     response.headers.set('Content-Type', 'application/rss+xml')
     return response
 
+
 def getDomainFromUrl(url:str)->str:
     domain = urlparse(url).netloc
     return domain

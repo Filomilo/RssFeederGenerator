@@ -13,7 +13,7 @@ def RssFeedGenerator():
         return "No argument provided"
     try:
         return generateFeedResponseForUrl(url)
-    except TypeError as err:
+    except BaseException as err:
         return f"error occurred: {err}"
     except:
         return "Unknown error occurred"
