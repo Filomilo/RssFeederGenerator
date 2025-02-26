@@ -19,11 +19,3 @@ def generateFeedForWebToon(url)->FeedGenerator:
         fe.pubDate(page.date)
 
     return fg
-
-
-    # if not (self.__rss_title and
-    #             self.__rss_link and
-    #             self.__rss_description):
-    #         missing = ([] if self.__rss_title else ['title']) + \
-    #                   ([] if self.__rss_link else ['link']) + \
-    #                   ([] if self.__rss_description else ['description'])
