@@ -1,7 +1,10 @@
 from feedgen.feed import FeedGenerator
 from flask import make_response, Response
-from .Websites import generateFeedForWebToon
 from urllib.parse import urlparse
+
+from FeedGenerator.Websites import generateFeedForWebToon
+from FeedGenerator.Websites.DziennikUstawFeeder import generateFeedForDziennikustaw
+
 
 def generateFeedResponseForUrl(url:str)-> Response:
     domain: str=getDomainFromUrl(url)
@@ -9,6 +12,8 @@ def generateFeedResponseForUrl(url:str)-> Response:
     match domain:
         case 'www.webtoons.com':
             fg=generateFeedForWebToon(url=url)
+        case 'dziennikustaw.gov.pl':
+            fg=generateFeedForDziennikustaw(url=url)
         case _:
             raise TypeError(f"Unable to handle url [{url}]")
     response= make_response(fg.rss_str())
