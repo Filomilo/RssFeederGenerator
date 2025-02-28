@@ -1,9 +1,9 @@
+from PythonWebScrapingManager_filomilo.WebsitesModules.Dziennikustawgov.Dziennikustawgov import getDocumentsList
+from PythonWebScrapingManager_filomilo.WebsitesModules.Dziennikustawgov.DziennikustawgovDataTypes import \
+    DziennikustawgovDocument
 from feedgen.feed import FeedGenerator
 
-from FeedGenerator.Websites.PythonWebScrapingManager.WebsitesModules.Dziennikustawgov.Dziennikustawgov import \
-    getDocumentsList
-from FeedGenerator.Websites.PythonWebScrapingManager.WebsitesModules.Dziennikustawgov.DziennikustawgovDataTypes import \
-    DziennikustawgovDocument
+
 
 
 def generateFeedForDziennikustaw(url):

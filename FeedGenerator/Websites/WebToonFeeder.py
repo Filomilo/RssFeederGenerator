@@ -1,9 +1,8 @@
 import datetime
+
+from PythonWebScrapingManager_filomilo.WebsitesModules.Webtoon.Webtoon import retiveComicPageInfo
+from PythonWebScrapingManager_filomilo.WebsitesModules.Webtoon.WebtoonDataTypes import WebtoonMainPageInfo
 from feedgen.feed import FeedGenerator
-
-from FeedGenerator.Websites.PythonWebScrapingManager.WebsitesModules.Webtoon import retiveComicPageInfo
-from FeedGenerator.Websites.PythonWebScrapingManager.WebsitesModules.Webtoon.WebtoonDataTypes import WebtoonMainPageInfo
-
 def generateFeedForWebToon(url)->FeedGenerator:
     webToonData: WebtoonMainPageInfo=retiveComicPageInfo(url)
     fg = FeedGenerator()

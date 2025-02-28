@@ -1,6 +1,33 @@
+import logging
+
 from flask import Flask,request
 from FeedGenerator.FeedGenerator import generateFeedResponseForUrl
+
+from logging.config import dictConfig
+
+logger=logging.getLogger(__name__)
+logging.getLogger().setLevel(logging.INFO)
+
+
+
+dictConfig({
+    'version': 1,
+    'formatters': {'default': {
+        'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
+    }},
+    'handlers': {'wsgi': {
+        'class': 'logging.StreamHandler',
+        'stream': 'ext://flask.logging.wsgi_errors_stream',
+        'formatter': 'default'
+    }},
+    'root': {
+        'level': 'INFO',
+        'handlers': ['wsgi']
+    }
+})
+
 app=Flask(__name__)
+
 
 @app.route("/")
 def description():
@@ -9,6 +36,7 @@ def description():
 @app.route('/feed')
 def RssFeedGenerator():
     url: str=request.args.get('url')
+    logger.info(f"request feed for url: {url}")
     if url is None:
         return "No argument provided"
     try:
