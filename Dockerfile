@@ -7,5 +7,5 @@ COPY ./app/ /app
 
 
 # running app 
-EXPOSE 5000
-ENTRYPOINT [ "gunicorn","--bind","127.0.0.1:5000","app:app" ]
+EXPOSE 10000 
+ENTRYPOINT [ "gunicorn","--bind","0.0.0.0:10000 ","app:app" ]
