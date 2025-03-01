@@ -41,7 +41,7 @@ def RssFeedGenerator():
     if url is None:
         return "No argument provided"
     try:
-        return generateFeedResponseForUrl(url)
+        return generateFeedResponseForUrl(url,args=request.args)
     except BaseException as err:
         return f"error occurred: {err}"
     except:

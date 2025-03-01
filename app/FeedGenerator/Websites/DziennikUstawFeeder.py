@@ -1,4 +1,6 @@
-from PythonWebScrapingManager_filomilo.WebsitesModules.Dziennikustawgov.Dziennikustawgov import getDocumentsList
+from typing import Dict
+
+from PythonWebScrapingManager_filomilo.WebsitesModules.Dziennikustawgov.Dziennikustawgov import getDocumentsList, getDocumentsListInWholeSection
 from PythonWebScrapingManager_filomilo.WebsitesModules.Dziennikustawgov.DziennikustawgovDataTypes import \
     DziennikustawgovDocument
 from feedgen.feed import FeedGenerator
@@ -6,8 +8,12 @@ from feedgen.feed import FeedGenerator
 
 
 
-def generateFeedForDziennikustaw(url):
-    docsList: list[DziennikustawgovDocument]=getDocumentsList(url)
+def generateFeedForDziennikustaw(url:str,args):
+    if args is None or args.get('multipage') is None or args.get('multipage')!= 'True':
+        docsList: list[DziennikustawgovDocument]=getDocumentsList(url)
+    else:
+        docsList: list[DziennikustawgovDocument] = getDocumentsListInWholeSection(url)
+
     fg = FeedGenerator()
     fg.title("Dziennik ustaw")
     fg.description("Dziennik ustaw")
