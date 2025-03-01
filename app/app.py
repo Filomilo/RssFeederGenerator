@@ -1,9 +1,10 @@
 import logging
 
 from flask import Flask,request
-from FeedGenerator.FeedGenerator import generateFeedResponseForUrl
 
 from logging.config import dictConfig
+
+from FeedGenerator.FeedGenerator import generateFeedResponseForUrl
 
 logger=logging.getLogger(__name__)
 logging.getLogger().setLevel(logging.INFO)

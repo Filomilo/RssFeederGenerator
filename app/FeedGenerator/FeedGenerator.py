@@ -2,8 +2,8 @@ from feedgen.feed import FeedGenerator
 from flask import make_response, Response
 from urllib.parse import urlparse
 
-from FeedGenerator.Websites import generateFeedForWebToon
-from FeedGenerator.Websites.DziennikUstawFeeder import generateFeedForDziennikustaw
+from .Websites import generateFeedForWebToon
+from .Websites.DziennikUstawFeeder import generateFeedForDziennikustaw
 
 
 def generateFeedResponseForUrl(url:str)-> Response:
